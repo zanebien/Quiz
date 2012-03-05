@@ -1,0 +1,11 @@
+# Example:
+
+// Get Quiz
+$qm = QuizManager::getInstance($conn);
+$quiz = $qm->getQuiz(1);
+
+// Get Quiz Questions
+$qm->getQuestions($quiz);
+
+// Display the quiz
+$quiz->render();
