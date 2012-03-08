@@ -1,19 +1,20 @@
 <?php
-	class ShortAnswer extends QuizQuestion
+
+class ShortAnswer extends QuizQuestion
+{
+	private $explanation;
+	
+	public function setExplanation($exp)
 	{
-		private $explanation;
-		
-		public function setExplanation($exp)
-		{
-			$this->explanation = $exp;
-		}
-		
-		public function display()
-		{
-			$this->displayHeading();
-			
-			echo '<textarea class="quiz_shortanswer_box" name="qid' . $this->id . '"></textarea>';
-			
-			$this->displayFooter();
-		}
+		$this->explanation = $exp;
 	}
+	
+	public function display()
+	{
+		$this->displayHeading();
+		
+		echo '<textarea class="quiz_shortanswer_box" name="qid' . $this->id . '"></textarea>';
+		
+		$this->displayFooter();
+	}
+}
