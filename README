@@ -1,11 +1,17 @@
 # Example:
 
+// Configure quiz container
+QuizContainer::setdb($pdoconn);
+
 // Get Quiz
-$qm = QuizManager::getInstance($conn);
-$quiz = $qm->getQuiz(1);
+$quiz = QuizContainer::createQuiz();
+$quiz->getById(1);
 
 // Get Quiz Questions
-$qm->getQuestions($quiz);
+$quiz->getQuestions();
+
+// Randomize Order of Quiz Questions
+$quiz->randomizeOrder();
 
 // Display the quiz
 $quiz->render();
